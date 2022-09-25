@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,600&family=Oswald&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&family=Roboto+Condensed:ital,wght@1,300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Lato;
+    transition: all .2s;
+}
+:root{
+    --bgcolordia:#ff88;
+    --bgcolordark:#091921;
+    --manecilla:#555;
+}
+/*
+#091921
+#118c8c
+*/
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+}
+.bg{
+    background-color:var(--bgcolordia);
+}
+
+
+.button{
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    border: 2px solid var(--bgcolor);
+
+    display: flex;
+   
+    align-items: center;
+    position: relative;
+    
+    
+    align-self: flex-end;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 20px;
+    box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.05),
+                0 1px 1px rgba(255, 255, 255, 0.05),
+                inset 0 -1px 1px rgba(0, 50, 0, 0.3),
+                inset 0 1px 1px rgba(0, 50, 0, 0.3);  
+}
+.button:hover:after{
+    content: "Dark Mode";
+    position: absolute;
+    background-color: #fff;
+    padding: 3px;
+    border-radius: 2px;
+    bottom: -25px;
+    font-size: .8rem;
+    
+}
+.button button{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+
+    background-image: url(../img/luna-creciente.png);
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    outline: none;
+    border: none;
+}
+
+.reloj{
+    width: 350px;
+    height: 350px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    border: 4px solid var(--bgcolor);
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(0, 50, 0, 0.3),
+                inset 0 15px 15px rgba(0, 50, 0, 0.3);
+
+    background-image: url(../img/clock.png);
+    background-size: cover;
+    background-position: center;
+}
+.reloj:before{
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    z-index: 10000;
+    border-radius: 50%;
+}
+.reloj .horas,.reloj .minutos,.reloj .segundos{
+    position: absolute;
+}
+.reloj .horas,.hora{
+    width: 160px;
+    height: 160px;
+}
+.reloj .minutos,.minuto{
+    width: 190px;
+    height: 190px;
+}
+.reloj .segundos,.segundo{
+    width: 230px;
+    height: 230px;
+}
+.hora,.minuto,.segundo{
+    display: flex;
+    justify-content: center;
+   
+    position: absolute;
+    border-radius:50% ;
+}
+
+.hora::before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 80px;
+    background-color: var(--manecilla);
+    z-index: 10;
+    border-radius:2px ;
+
+}
+.minuto::before{
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background-color: var(--manecilla);
+    z-index: 11;
+    border-radius:2px ;
+
+}
+.segundo::before{
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 150px;
+    background-color: #f00;
+    z-index: 12;
+    border-radius:2px ;
+
+}
+
+.bd{
+    background-color: var(--bgcolordark);
+}
+.bg .button button{
+    background-image: url(../img/sol.png);
+}
+.bd .button{
+    justify-content: flex-end;
+}
+.bd >.reloj >.horas>.hora::before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 80px;
+    background-color: #fff;
+    z-index: 10;
+    border-radius:2px ;
+
+}
+.bd >.reloj >.minutos>.minuto::before{
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background-color: #fff;
+    z-index: 11;
+    border-radius:2px ;
+
+}
